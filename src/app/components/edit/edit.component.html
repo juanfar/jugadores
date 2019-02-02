@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Editar Jugador</h3>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" #nombre [(ngModel)]="player.nombre"/>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Equipo</label>
+        <input type="text" class="form-control" formControlName="equipo" #equipo [(ngModel)]="player.equipo"/>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Precio</label>
+        <input type="number" class="form-control" formControlName="precio" #precio [(ngModel)]="player.precio"/>
+      </div>
+      <div class="form-group">
+        <button (click)="updatePlayer(nombre.value, equipo.value, precio.value)" class="btn btn-primary">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</div>
